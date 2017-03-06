@@ -3,4 +3,5 @@
     xmlns:app="http://schemas.android.com/apk/res-auto" >
     <item android:id="@+id/geofence" android:title="Create Geofence" app:showAsAction="never" />
     <item android:id="@+id/clear" android:title="Clear Geofence" app:showAsAction="never" />
+    <item android:id="@+id/registerGcmClient" android:title="Register to GCM" app:showAsAction="never" />
 </menu>

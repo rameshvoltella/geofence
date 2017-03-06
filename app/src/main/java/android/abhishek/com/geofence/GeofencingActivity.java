@@ -1,6 +1,7 @@
 package android.abhishek.com.geofence;
 
 import android.Manifest;
+import android.abhishek.com.geofence.gcm.FirebaseRegisterToGCMIntent;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -29,8 +30,6 @@ import com.google.android.gms.location.GeofencingRequest;
 import com.google.android.gms.location.LocationListener;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationServices;
-import com.google.android.gms.maps.CameraUpdate;
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -76,6 +75,9 @@ public class GeofencingActivity extends AppCompatActivity implements GoogleApiCl
 
 	private final String KEY_GEOFENCE_LAT = "KEY_GEOFENCE_LAT";
 	private final String KEY_GEOFENCE_LON = "KEY_GEOFENCE_LON";
+
+	private PendingIntent geoFencePendingIntent;
+	private final int GEOFENCE_REQ_CODE = 0;
 
 	// Create a Intent send by the notification
 	public static Intent makeNotificationIntent(Context context, String msg) {
@@ -140,6 +142,10 @@ public class GeofencingActivity extends AppCompatActivity implements GoogleApiCl
 			case R.id.clear: {
 				clearGeofence();
 				return true;
+			}
+			case R.id.registerGcmClient: {
+				registerToGCM();
+				return  true;
 			}
 		}
 		return super.onOptionsItemSelected(item);
@@ -319,6 +325,13 @@ public class GeofencingActivity extends AppCompatActivity implements GoogleApiCl
 		}
 	}
 
+	//
+	private void registerToGCM() {
+		Log.i(TAG, "registerToGCM()");
+		Intent registerToGCMIntent = new Intent(this, FirebaseRegisterToGCMIntent.class);
+		startService(registerToGCMIntent);
+	}
+
 	// Create a Geofence
 	private Geofence createGeofence(LatLng latLng, float radius) {
 		Log.d(TAG, "createGeofence");
@@ -333,8 +346,7 @@ public class GeofencingActivity extends AppCompatActivity implements GoogleApiCl
 		return new GeofencingRequest.Builder().setInitialTrigger(GeofencingRequest.INITIAL_TRIGGER_ENTER).addGeofence(geofence).build();
 	}
 
-	private PendingIntent geoFencePendingIntent;
-	private final int GEOFENCE_REQ_CODE = 0;
+
 
 	private PendingIntent createGeofencePendingIntent() {
 		Log.d(TAG, "createGeofencePendingIntent");
