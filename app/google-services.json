@@ -1,0 +1,81 @@
+{
+  "project_info": {
+    "project_number": "682249054414",
+    "firebase_url": "https://attendace-system.firebaseio.com",
+    "project_id": "attendace-system",
+    "storage_bucket": "attendace-system.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682249054414:android:73ac8fef78f494f2",
+        "android_client_info": {
+          "package_name": "com.ams"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682249054414-0esh1t3bgrbh5nl9abrqvkd1hpitmv4d.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "682249054414-co4q1o8u44al03a18efbktct63s0fk7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSNbio2PUCIkMQaXQ7s_BKeERUBgYPYiM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:682249054414:android:61f6a7cbb5bdc725",
+        "android_client_info": {
+          "package_name": "android.abhishek.com.geofence"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "682249054414-0esh1t3bgrbh5nl9abrqvkd1hpitmv4d.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "682249054414-co4q1o8u44al03a18efbktct63s0fk7j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSNbio2PUCIkMQaXQ7s_BKeERUBgYPYiM"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
